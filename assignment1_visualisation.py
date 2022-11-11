@@ -48,8 +48,8 @@ def satisfaction_perc(satisfaction):
 #Reading the first 10 rows of the data into a Data Frame
 data = pd.read_csv('performance-data.csv', nrows=10)
                  
-#Plotting the total transactions rate and online transaction rate of 
-#first 10 weeks using line plot
+#Plotting the total transaction rate and online transaction rate of 
+#of each week using line plot
 plt.figure(figsize=(13,7))
 #Calling the function transaction_rate  as an argument
 plt.plot(data['Week commencing'], 
@@ -67,7 +67,7 @@ plt.savefig("lineplot.png")
 plt.show()  
 
 #Creating a bar plot to compare total number of transaction and 
-#number of completed transaction each week
+#number of completed transactions each week
 plt.figure(figsize=(15,7))
 x_axis = np.arange(len(data['Week commencing']))
 plt.bar(x_axis - 0.15, data['Transactions – total'], width=0.3, 
@@ -87,7 +87,7 @@ plt.savefig("barchart.png")
 plt.show()
 
 #Creating a pie chart for comparing the rate of satisfaction
-#in total transactionS
+#in the total number transactions in the first 10 weeks
 plt.figure(figsize=(13,10))
 #Calling the function satisfaction_perc as an argument
 plt.pie([satisfaction_perc(data['Very dissatisfied']),  
